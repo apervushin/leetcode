@@ -5,20 +5,14 @@ using namespace std;
 class ClimbingStairs {
 public:
     int climbStairs(int n) {
-        vector<int> state;
-        return climbStairs(n, 0, state);
-    }
-
-private:
-    int climbStairs(int n, int pos, vector<int>& state) {
-        if (n == pos) {
-            return 0;
+        int prev1 = 1;
+        int prev2 = 1;
+        int tmp;
+        for (int i = 2; i <= n; i++) {
+            tmp = prev1 + prev2;
+            prev1 = prev2;
+            prev2 = tmp;
         }
-        if (n - pos == 1) {
-            return 1;
-        }
-        if (n - pos == 2) {
-            return 2;
-        }
+        return prev2;
     }
 };

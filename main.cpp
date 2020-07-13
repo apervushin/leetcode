@@ -1,11 +1,16 @@
 #include <iostream>
 #include <string>
-#include "climbing_stairs.cpp"
+#include "symmetric_tree.cpp"
 
 using namespace std;
 
 int main() {
-    ClimbingStairs s;
-    cout << s.climbStairs(3);
+    SymmetricTree s;
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(2);
+    root->left->left = new TreeNode(3);
+    root->right->right = new TreeNode();
+    cout << s.isSymmetric(root);
     return 0;
 }

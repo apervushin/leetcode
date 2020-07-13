@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer -g -O1")
 
-add_executable(leetcode_cpp main.cpp powx_n.cpp rotate_image.cpp sort_colors.cpp top_k_frequent_elements.cpp climbing_stairs.cpp)
+add_executable(leetcode_cpp main.cpp powx_n.cpp rotate_image.cpp sort_colors.cpp top_k_frequent_elements.cpp climbing_stairs.cpp binary_tree_inorder_traversal.cpp symmetric_tree.cpp)
