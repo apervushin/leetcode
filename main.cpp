@@ -1,18 +1,23 @@
 #include <iostream>
 #include <string>
-#include "min_stack.cpp"
+#include "binary_tree_zigzag_level_order_traversal.cpp"
 
 using namespace std;
 
 int main() {
-    MinStack* minStack = new MinStack();
-    minStack->push(-2);
-    minStack->push(0);
-    minStack->push(-3);
-    cout << minStack->getMin() << endl; // return -3
-    minStack->pop();
-    cout << minStack->top() << endl;    // return 0
-    cout << minStack->getMin() << endl; // return -2
+    BinaryTreeZigzagLevelOrderTraversal s;
+    TreeNode* in = new TreeNode(5);
+    in->left = new TreeNode(1);
+    in->right = new TreeNode(4);
+    in->right->left = new TreeNode(3);
+    in->right->right = new TreeNode(6);
+    auto result = s.zigzagLevelOrder(in);
+    for (auto r1 : result) {
+        for (auto r2 : r1) {
+            cout << r2 << " ";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
