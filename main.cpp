@@ -1,16 +1,18 @@
 #include <iostream>
 #include <string>
-#include "symmetric_tree.cpp"
+#include "min_stack.cpp"
 
 using namespace std;
 
 int main() {
-    SymmetricTree s;
-    TreeNode* root = new TreeNode(1);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(2);
-    root->left->left = new TreeNode(3);
-    root->right->right = new TreeNode();
-    cout << s.isSymmetric(root);
+    MinStack* minStack = new MinStack();
+    minStack->push(-2);
+    minStack->push(0);
+    minStack->push(-3);
+    cout << minStack->getMin() << endl; // return -3
+    minStack->pop();
+    cout << minStack->top() << endl;    // return 0
+    cout << minStack->getMin() << endl; // return -2
+
     return 0;
 }
