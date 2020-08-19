@@ -1,23 +1,35 @@
 #include <iostream>
-#include <string>
-#include "binary_tree_zigzag_level_order_traversal.cpp"
+#include "spiral_matrix.cpp"
+#include <climits>
 
 using namespace std;
 
 int main() {
-    BinaryTreeZigzagLevelOrderTraversal s;
-    TreeNode* in = new TreeNode(5);
-    in->left = new TreeNode(1);
-    in->right = new TreeNode(4);
-    in->right->left = new TreeNode(3);
-    in->right->right = new TreeNode(6);
-    auto result = s.zigzagLevelOrder(in);
-    for (auto r1 : result) {
-        for (auto r2 : r1) {
-            cout << r2 << " ";
-        }
-        cout << endl;
+    SpiralMatrix s;
+
+    vector<vector<int>> input = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+    };
+//    vector<vector<int>> input = {
+//            {1, 2, 3, 4},
+//            {5, 6, 7, 8},
+//            {9, 10, 11, 12}
+//    };
+//    vector<vector<int>> input = {
+//            {1, 2, 3, 4}
+//    };
+//    vector<vector<int>> input = {
+//            {1},
+//            {2}
+//    };
+    vector<int> result = s.spiralOrder(input);
+
+    for (int r : result) {
+        cout << r << " ";
     }
+    cout << endl;
 
     return 0;
 }
