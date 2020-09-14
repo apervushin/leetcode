@@ -68,7 +68,7 @@ public:
         return result;
     }
 
-    string print(int a) {
+    string toBinaryString(int a) {
         return bitset<64>(a).to_string();
     }
 
