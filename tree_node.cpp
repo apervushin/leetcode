@@ -17,10 +17,15 @@ struct TreeNode {
         }
         out << "{" << v->val << ", ";
         if (v->left != nullptr) {
-            out << v->left << ", ";
+            out << v->left;
+        } else {
+            out << "x";
         }
+        out << ", ";
         if (v->right != nullptr) {
             out << v->right;
+        } else {
+            out << "x";
         }
         out << "}";
         return out;

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class ReconstructItinerary {gi
+class ReconstructItinerary {
 public:
     vector<string> findItinerary(vector<vector<string>>& tickets) {
         unordered_map<string, map<string, int>> edges;

@@ -1,19 +1,21 @@
 #include <iostream>
 #include <vector>
-#include "reconstruct_itinerary.cpp"
+#include "flatten_binary_tree_to_linked_list.cpp"
 
 using namespace std;
 
 int main() {
-    ReconstructItinerary s;
+    FlattenBinaryTreeToLinkedList s;
 
-    //vector<vector<string>> in = {{"JFK","SFO"},{"JFK","ATL"},{"SFO","ATL"},{"ATL","JFK"},{"ATL","SFO"}};
-    //vector<vector<string>> in = {{"JFK","KUL"},{"JFK","NRT"},{"NRT","JFK"}};
-    //vector<vector<string>> in = {{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}};
-    vector<vector<string>> in = {{"ADL","ANU"},{"ADL","AXA"},{"ADL","CNS"},{"ADL","JFK"},{"ADL","TIA"},{"ANU","ADL"},{"ANU","AUA"},{"ANU","BNE"},{"ANU","BNE"},{"AUA","ADL"},{"AUA","ADL"},{"AUA","EZE"},{"AUA","TIA"},{"AUA","TIA"},{"AXA","ANU"},{"AXA","AUA"},{"AXA","EZE"},{"BNE","ANU"},{"BNE","AXA"},{"BNE","CBR"},{"BNE","EZE"},{"BNE","EZE"},{"CBR","AUA"},{"CBR","JFK"},{"CNS","JFK"},{"EZE","ADL"},{"EZE","ANU"},{"EZE","AUA"},{"EZE","AXA"},{"EZE","HBA"},{"EZE","OOL"},{"EZE","TIA"},{"JFK","AUA"},{"JFK","BNE"},{"JFK","CBR"},{"JFK","EZE"},{"JFK","OOL"},{"OOL","EZE"},{"OOL","JFK"},{"TIA","ADL"},{"TIA","BNE"},{"TIA","BNE"},{"TIA","EZE"},};
-    for(auto b : s.findItinerary(in)) {
-        cout << b << " ";
-    }
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->left->left = new TreeNode(3);
+    root->left->right = new TreeNode(4);
+    root->right = new TreeNode(5);
+    root->right->right = new TreeNode(6);
+
+    s.flatten(root);
+    cout << root;
 
     return 0;
 }
