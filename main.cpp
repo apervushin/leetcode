@@ -1,21 +1,20 @@
 #include <iostream>
 #include <vector>
-#include "flatten_binary_tree_to_linked_list.cpp"
+#include "diameter_of_binary_tree.cpp"
 
 using namespace std;
 
 int main() {
-    FlattenBinaryTreeToLinkedList s;
+    DiameterOfBinaryTree s;
 
     TreeNode* root = new TreeNode(1);
     root->left = new TreeNode(2);
-    root->left->left = new TreeNode(3);
-    root->left->right = new TreeNode(4);
-    root->right = new TreeNode(5);
-    root->right->right = new TreeNode(6);
+    root->right = new TreeNode(3);
 
-    s.flatten(root);
-    cout << root;
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+
+    cout << s.diameterOfBinaryTree(root);
 
     return 0;
 }
